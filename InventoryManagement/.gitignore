@@ -1,0 +1,16 @@
+# Ignore Visual Studio-related files
+.vs/
+*.user
+*.suo
+
+# Ignore build results
+bin/
+obj/
+
+# Ignore temporary files
+*.tmp
+*.log
+
+# Ignore other system or IDE-specific files
+.idea/
+.DS_Store

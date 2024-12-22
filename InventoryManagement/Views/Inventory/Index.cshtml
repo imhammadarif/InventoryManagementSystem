@@ -1,0 +1,40 @@
+﻿@model IEnumerable<InventoryManagement.Models.InventoryItem>
+
+<h1>Inventory Management</h1>
+<form method="post" asp-action="AddOrUpdate">
+    <input type="hidden" asp-for="Id" />
+    <label>Name:</label>
+    <input type="text" asp-for="Name" />
+    <label>Quantity:</label>
+    <input type="number" asp-for="Quantity" />
+    <label>Price:</label>
+    <input type="text" asp-for="Price" />
+    <button type="submit">Add/Update</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
